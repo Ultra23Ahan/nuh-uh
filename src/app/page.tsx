@@ -59,7 +59,7 @@ export default function Page() {
       </p>
       <Button variant="outline" className="mt-4" size="lg">
         <a href={learn} target="_blank" rel="noopener noreferrer">
-          Learn {learnText || 'something new'} Instead!
+          Learn {learnText || 'Something New'} Instead!
         </a>
       </Button>
     </main>
