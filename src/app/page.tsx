@@ -36,7 +36,7 @@ export default function Page() {
   }, [learn]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center z-[9999] dark:bg-gray-900 bg-white text-gray-800 dark:text-gray-200">
+    <main className="flex min-h-screen flex-col items-center justify-center z-[9999] dark:bg-gray-900 bg-white text-gray-800 dark:text-gray-200 opacity-100">
       <div className="flex flex-row items-center space-x-2">
         <h1 className="font-bold sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-3xl 2xl:text-8xl text-center">
           NUH UH
