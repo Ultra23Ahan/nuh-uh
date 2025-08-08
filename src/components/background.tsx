@@ -6,9 +6,10 @@ export default function Background() {
   return (
     <div className="absolute inset-0 h-full w-full overflow-hidden pointer-events-none">
       <Image
-        src="https://persistent.oaistatic.com/burrito-nux/1920.webp"
-        alt=""
-        fill
+        src="/bg.png"
+        alt="Background Image"
+        fill={true}
+        loading="eager"
         priority
         sizes="100vw"
         className="scale-[1.02] object-cover opacity-50 blur-2xl dark:opacity-30"
