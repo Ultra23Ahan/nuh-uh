@@ -6,33 +6,30 @@ import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 
 export default function Page() {
-  const [learnText, setLearnText] = useState('');
   const searchParams = useSearchParams();
-
-  const websiteRaw = searchParams.get('website');
-  const websiteName = websiteRaw
-    ? websiteRaw.charAt(0).toUpperCase() + websiteRaw.slice(1)
-    : 'this website';
-
-  const learn =
-    searchParams.get('learn') || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+  const [website, setWebsite] = useState('a distracting website');
 
   useEffect(() => {
-    async function fetchTitle() {
+    const raw = searchParams.get('website');
+    if (raw) {
       try {
-        const response = await fetch(learn);
-        const html = await response.text();
-        const match = html.match(/<title>(.*?)<\/title>/i);
-        const title = match ? match[1].trim() : 'Something New';
-        setLearnText(title);
-      } catch (err) {
-        setLearnText('Something New');
-        console.error('Error fetching title:', err);
+        const urlObj = new URL(raw.includes('://') ? raw : `https://${raw}`);
+        let host = urlObj.hostname.replace(/^www\./, ''); // remove www
+        let parts = host.split('.');
+        let mainName = parts.length > 2 ? parts[parts.length - 2] : parts[0]; // root name only
+        mainName = mainName.charAt(0).toUpperCase() + mainName.slice(1);
+        setWebsite(mainName);
+      } catch {
+        setWebsite('a distracting website');
       }
+    } else {
+      setWebsite('a distracting website');
     }
+  }, [searchParams]);
 
-    fetchTitle();
-  }, [learn]);
+  const learn =
+    searchParams.get('learn') ||
+    'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center z-[9999] dark:bg-gray-900 bg-white text-gray-800 dark:text-gray-200 opacity-100">
@@ -49,16 +46,17 @@ export default function Page() {
             repeatType: 'reverse',
             ease: 'linear',
           }}
-          className="sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-3xl 2xl:text-8xl">
+          className="sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-3xl 2xl:text-8xl"
+        >
           👆
         </motion.span>
       </div>
       <p className="mt-4 text-center text-2xl tracking-wider">
-        Are you trying to visit {websiteName}?
+        Are you trying to visit {website}?
       </p>
       <Button variant="outline" className="mt-4" size="lg">
         <a href={learn} target="_blank" rel="noopener noreferrer">
-          Learn {learnText || 'Something New'} Instead!
+          Learn Something New Instead!
         </a>
       </Button>
     </main>

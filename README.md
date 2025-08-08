@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hello!
 
-## Getting Started
+This is a simple website which is supposed to help you quit going to any website and getting distracted, here YouTube is taken as an example.
 
-First, run the development server:
+## Usage:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+go to `https://nuh-uh-ultra23ahans-projects.vercel.app/` and put in a parameter website and a parameter learn. For example:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://youtube.com&learn=https://nextjs.org/docs`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To acually quit your habit, bookmark the website instead of YouTube for example and then just forget about it. Now, when you go to the website, it will show a message and will advise you to learn something new instead of wasting your time.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Guidelines for parameters:
 
-## Learn More
+#### Website parameter:
 
-To learn more about Next.js, take a look at the following resources:
+the `?website=` parameter should be the website you are trying to stopvisiting. For example, if you are trying to stop visiting YouTube, it is recommended to set the parameter to `?website=youtube`. The parameter also supports websites in full like `?learn=https://www.youtube.com`. You can leave out any part of the domain you do not have. All of the following are valid:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`?learn=https://youtube.com`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`?learn=https://www.youtube.com`
 
-## Deploy on Vercel
+`?learn=youtube.com`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`?learn=https://youtube`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`?learn=youtube` (preferred)
+
+#### Learn parameter
+
+the `?learn=` parameter is the website URL you want to go to to learn something new. For example, if I want to learn Next.js, I will set the parameter to `?learn=https://nextjs.org/docs`, which leads to the nextjs docs.
+
+Full example (preferred practices):
+`https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://youtube&learn=https://nextjs.org/docs`
+
+## More Examples
+
+https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://instagram.com&learn=https://www.npmjs.com/package/next-themes?activeTab=readme
+
+https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://x.com&learn=https://docs.astro.build/en/getting-started/
+
+https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://netflix.com&learn=https://vuejs.org/guide/introduction
+
+https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://twitch.tv.com&learn=https://www.youtube.com/watch?v=lfmg-EJ8gm4
