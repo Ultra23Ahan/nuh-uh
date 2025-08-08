@@ -14,8 +14,8 @@ export default function Page() {
     if (raw) {
       try {
         const urlObj = new URL(raw.includes('://') ? raw : `https://${raw}`);
-        let host = urlObj.hostname.replace(/^www\./, ''); // remove www
-        let parts = host.split('.');
+        const host = urlObj.hostname.replace(/^www\./, ''); // remove www
+        const parts = host.split('.');
         let mainName = parts.length > 2 ? parts[parts.length - 2] : parts[0]; // root name only
         mainName = mainName.charAt(0).toUpperCase() + mainName.slice(1);
         setWebsite(mainName);
@@ -28,8 +28,7 @@ export default function Page() {
   }, [searchParams]);
 
   const learn =
-    searchParams.get('learn') ||
-    'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+    searchParams.get('learn') || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center z-[9999] dark:bg-gray-900 bg-white text-gray-800 dark:text-gray-200 opacity-100">
@@ -46,8 +45,7 @@ export default function Page() {
             repeatType: 'reverse',
             ease: 'linear',
           }}
-          className="sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-3xl 2xl:text-8xl"
-        >
+          className="sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-3xl 2xl:text-8xl">
           👆
         </motion.span>
       </div>
