@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'motion/react';
-import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
 export default function Page() {
@@ -25,10 +24,10 @@ export default function Page() {
         const html = await response.text();
         const match = html.match(/<title>(.*?)<\/title>/i);
         const title = match ? match[1].trim() : 'Something New';
-        const firstWord = title.split(' ')[0];
-        setLearnText(firstWord);
+        setLearnText(title);
       } catch (err) {
         setLearnText('Something New');
+        console.error('Error fetching title:', err);
       }
     }
 
