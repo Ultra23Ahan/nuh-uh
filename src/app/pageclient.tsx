@@ -4,27 +4,16 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
+import { getWebsiteFavicon } from '@/lib/get-website-favicon';
+import { getWebsiteName } from '@/lib/get-website-name';
 
 export default function PageClient() {
   const searchParams = useSearchParams();
   const [website, setWebsite] = useState('a distracting website');
 
   useEffect(() => {
-    const raw = searchParams.get('website');
-    if (raw) {
-      try {
-        const urlObj = new URL(raw.includes('://') ? raw : `https://${raw}`);
-        const host = urlObj.hostname.replace(/^www\./, '');
-        const parts = host.split('.');
-        let mainName = parts.length > 2 ? parts[parts.length - 2] : parts[0];
-        mainName = mainName.charAt(0).toUpperCase() + mainName.slice(1);
-        setWebsite(mainName);
-      } catch {
-        setWebsite('a distracting website');
-      }
-    } else {
-      setWebsite('a distracting website');
-    }
+    getWebsiteName(searchParams, setWebsite);
+    getWebsiteFavicon(searchParams);
   }, [searchParams]);
 
   const learn =
