@@ -10,21 +10,13 @@ go to `https://nuh-uh-ultra23ahans-projects.vercel.app/` and put in a parameter 
 
 To acually quit your habit, bookmark the website instead of YouTube for example and then just forget about it. Now, when you go to the website, it will show a message and will advise you to learn something new instead of wasting your time.
 
-## Guidelines for parameters:
+## Guidelines For Parameters:
 
 #### Website parameter:
 
-the `?website=` parameter should be the website you are trying to stopvisiting. For example, if you are trying to stop visiting YouTube, it is recommended to set the parameter to `?website=youtube`. The parameter also supports websites in full like `?learn=https://www.youtube.com`. You can leave out any part of the domain you do not have. All of the following are valid:
-
-`?learn=https://youtube.com`
-
-`?learn=https://www.youtube.com`
-
-`?learn=youtube.com`
-
-`?learn=https://youtube`
-
-`?learn=youtube` (preferred)
+the `?website=` parameter should be the website you are trying to stopvisiting. For example, if you are trying to stop visiting YouTube, it is recommended to set the parameter to `?website=https://youtube.com`. The parameter also supports websites in full such as `?website=https://www.youtube.com`. You can leave out the `www.` at the start. All of the following are valid:
+`?website=https://youtube.com`
+`?website=https://www.youtube.com`
 
 #### Learn parameter
 
@@ -35,10 +27,10 @@ Full example (preferred practices):
 
 ## More Examples
 
-https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://instagram.com&learn=https://www.npmjs.com/package/next-themes?activeTab=readme
+`https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://instagram.com&learn=https://www.npmjs.com/package/next-themes?activeTab=readme`
 
-https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://x.com&learn=https://docs.astro.build/en/getting-started/
+`https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://x.com&learn=https://docs.astro.build/en/getting-started/`
 
-https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://netflix.com&learn=https://vuejs.org/guide/introduction
+`https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://netflix.com&learn=https://vuejs.org/guide/introduction`
 
-https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://twitch.tv.com&learn=https://www.youtube.com/watch?v=lfmg-EJ8gm4
+`https://nuh-uh-ultra23ahans-projects.vercel.app/?website=https://twitch.tv&learn=https://www.youtube.com/watch?v=lfmg-EJ8gm4`

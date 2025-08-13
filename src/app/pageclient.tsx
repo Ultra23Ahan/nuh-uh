@@ -42,7 +42,7 @@ export default function PageClient() {
         Are you trying to visit {website}?
       </p>
       <Button variant="outline" className="mt-4" size="lg">
-        <a href={learn} target="_blank" rel="noopener noreferrer">
+        <a href={learn} rel="noopener noreferrer">
           Learn Something New Instead!
         </a>
       </Button>
