@@ -1,11 +1,9 @@
-import type { SearchParams } from 'next/dist/server/request/search-params';
+import type { ReadonlyURLSearchParams } from 'next/navigation';
 import * as React from 'react';
-export async function getWebsiteName(
-  searchParams,
-  setWebsite: {
-    searchParams: SearchParams;
-    setWebsite: React.Dispatch<React.SetStateAction<string>>;
-  }
+
+export function getWebsiteName(
+  searchParams: ReadonlyURLSearchParams,
+  setWebsite: React.Dispatch<React.SetStateAction<string>>
 ) {
   const raw = searchParams.get('website');
   if (raw) {

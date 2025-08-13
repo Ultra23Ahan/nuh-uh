@@ -1,4 +1,6 @@
-export async function getWebsiteFavicon(searchParams) {
+import { ReadonlyURLSearchParams } from 'next/navigation';
+
+export async function getWebsiteFavicon(searchParams: ReadonlyURLSearchParams) {
   const raw = searchParams.get('website');
   if (!raw) return;
 
