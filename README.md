@@ -17,6 +17,7 @@ To acually quit your habit, bookmark the website instead of YouTube for example 
 the `?website=` parameter should be the website you are trying to stopvisiting. For example, if you are trying to stop visiting YouTube, it is recommended to set the parameter to `?website=https://youtube.com`. The parameter also supports websites in full such as `?website=https://www.youtube.com`. You can leave out the `www.` at the start. All of the following are valid:
 `?website=https://youtube.com`
 `?website=https://www.youtube.com`
+The parameter **MUST** be a valid website for the favicon fetching to work.
 
 #### Learn parameter
 
